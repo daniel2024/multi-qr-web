@@ -26,7 +26,7 @@ const LabelButton = styled.span`
 
 `;
 
-const IconButton = ({ srcIcon, label, onClick = () => { } }) => {
+const IconButton = ({ srcIcon, label, onClick  }) => {
   return (
     <ButtonIcon onClick={onClick}>
       <Image src={srcIcon} alt={label} width={23} height={23} />
