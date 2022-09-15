@@ -1,7 +1,7 @@
 import React from 'react';
 import Promotion from './Promotion'
 
-const SCREEN_KEY = {
+export const SCREEN_KEY = {
     PROMOTION: "PROMOTION",
     PAYMENT_METHODS: "PAYMENT_METHODS",
 }

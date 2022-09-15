@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import style from 'styled-components';
 import Header from '../Header';
 import Drawer from '../Drawer';
-import Tab from '../Tab'
+import Tab,{SCREEN_KEY} from '../Tab'
 
 const ContainerDesktop = style.div`
 height: 100vh;
@@ -22,14 +22,14 @@ height: calc(100% - 90px);
 
 const Desktop = () => {
 
-    const [screeSelected, setscreeSelected] = useState(0);
+    const [screeSelected, setscreeSelected] = useState(SCREEN_KEY.PROMOTION);
 
     return (
         <ContainerDesktop>
             <Header />
             <ContainerBody>
                 <Drawer />
-                <Tab />
+                <Tab screenSelected={screeSelected} />
             </ContainerBody>
         </ContainerDesktop>
     )
