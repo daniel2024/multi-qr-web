@@ -1,11 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import Button from '../button'
+import Button from '../button';
+import IconButton from '../button/IconButton';
+import Image from 'next/image'
 
 
 const ContainerDrawer = styled.div`
 width: 331px;
-height: calc(100% - 90px);
+height: 100%;
 box-shadow: 0px 4px 20px 0px #0000001C;
 padding-left: 33px;
 padding-right: 44px;
@@ -27,6 +29,7 @@ const ContainerStoreData = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
+margin-bottom: 71px;
 `;
 
 const NameStore = styled.span`
@@ -43,14 +46,27 @@ font-style: normal;
 font-weight: 400;
 font-size: 12px;
 line-height: 16px;
-/* identical to box height, or 133% */
-
 text-align: center;
-
-/* Tertiary/Gray-60% */
-
 color: #717171;
+margin: 0px;
 `
+const TextLocation = styled.p`
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 16px;
+color: #121212;
+`
+const ContainerLocation = styled.div`
+display: flex;
+flex-direction: row;
+`;
+
+const ContainerSocialButtons = styled.div`
+display: flex;
+flex-direction: row;
+column-gap: 10px;
+`;
 
 const Drawer = () => {
     return (
@@ -59,6 +75,21 @@ const Drawer = () => {
                 <AvatarStore src='https://media.revistagq.com/photos/5d5d383031110c000879872d/1:1/w_1080,h_1080,c_limit/logo-starbucks.jpg' />
                 <NameStore>Starbucks</NameStore>
                 <Category>Cafeteria</Category>
+                <ContainerLocation>
+                    <Image src="/IconLocation.svg" alt="Modo Logo" width={20} height={20} />
+                    <TextLocation>Av. Siempre Viva 742</TextLocation>
+                </ContainerLocation>
+                <ContainerSocialButtons>
+                    <Image style={{cursor:"pointer"}} src="/icFacebook.svg" alt="Modo Logo" width={20} height={20} />
+                    <Image style={{cursor:"pointer"}} src="/icInsta.svg" alt="Modo Logo" width={20} height={20} />
+                    <Image style={{cursor:"pointer"}} src="/icTwiter.svg" alt="Modo Logo" width={20} height={20} />
+                </ContainerSocialButtons>
+                <div style={{display:"flex", columnGap:"5px", marginTop:"18px"}}>
+
+                    <IconButton srcIcon="/icWhatsapp.svg" label="Contactar" />
+                    <IconButton srcIcon="/icPass.svg" label="Clave WIFI" />
+                </div>
+
             </ContainerStoreData>
 
             <ContainerButtons>
