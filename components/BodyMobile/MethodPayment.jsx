@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
+import useDevices from '../../hooks/useDevices';
 
 const ContainerButtons = styled.div`
   display: flex;
@@ -34,9 +35,31 @@ const NameModo = styled.span`
 `;
 
 const MethodPayment = () => {
+
+    const { isIOS } = useDevices()
+
+    const handleOnClickMP = () => {
+        if (isIOS) {
+            window.open("https://mpago.la/1YcDSgQ");
+
+         } else {
+            window.open("https://mpago.la/pos/1483701");
+        }
+
+    };
+
+    const onClickMODO = () => {
+        if (isIOS) {
+            window.open("https://assets.mobile.playdigital.com.ar/pago-ecommerce-modo?qr=00020101021141320018ar.com.modo.prisma0106PRISMA50150011202759296715126002207202089880000009094865204970053030325802AR5915JOSE+LUIS+TURCO6007CAPITAL623003045541101120275929671110352263048A82&callback=modo.com.ar&callbackSuccess=modo.com.ar");
+
+         } else {
+            window.open("intent://assets.mobile.playdigital.com.ar/pago-ecommerce-modo?qr=00020101021141320018ar.com.modo.prisma0106PRISMA50150011202759296715126002207202089880000009094865204970053030325802AR5915JOSE+LUIS+TURCO6007CAPITAL623003045541101120275929671110352263048A82&callback=modo.com.ar&callbackSuccess=modo.com.ar#Intent;scheme=https;package=com.playdigital.modo;end");
+        }
+    }
+
     return (
         <ContainerButtons>
-            <ButtonPayment>
+            <ButtonPayment onClick={onClickMODO}>
                 <div
                     style={{
 
@@ -53,7 +76,7 @@ const MethodPayment = () => {
                         position: 'absolute',
                         right: '46px',
                     }}>
-                    <Image src="/promo-tooltip.svg" alt="next" width={71} height={22} />
+                        <Image src="/promo-tooltip.svg" alt="next" width={71} height={22} />
                     </div>
                     <div style={{
                         position: 'absolute',
@@ -62,7 +85,7 @@ const MethodPayment = () => {
                     </div>
                 </div>
             </ButtonPayment>
-            <ButtonPayment>
+            <ButtonPayment onClick={handleOnClickMP} >
                 <div
                     style={{
                         display: 'flex',
