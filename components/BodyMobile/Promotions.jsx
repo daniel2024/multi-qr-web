@@ -9,6 +9,7 @@ const ContainerPromotions = styled.div`
   align-items: center;
   align-content: center;
   flex-direction: column;
+
 `;
 
 const Label = styled.label`
@@ -38,9 +39,9 @@ margin-bottom: 32px;
 overflow-x: scroll;
 padding: 0px 10px;
 width: 100%;
-scrollbar-color: grey transparent;
-scrollbar-width: thin;
 height: 116px;
+
+
 `;
 
 
@@ -55,8 +56,8 @@ const Promotions = ({ goToPage }) => {
       </div>
       <ContainerScroll>
         
-          <img alt="logo" src="/promo1.svg"  />
-          <img alt="logo" src="/promo2.svg"  />
+          <img alt="promo1" src="/promo1.svg"   />
+          <img alt="promo2" src="/promo2.svg"  />
         
       </ContainerScroll>
       <ContainerButtons>

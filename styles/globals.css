@@ -16,3 +16,20 @@ a {
 }
 
 
+* {
+  scrollbar-width: thin;
+  scrollbar-color: blue orange;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 0px;
+}
+
+*::-webkit-scrollbar-track {
+  width: 0px;
+}
+
+*::-webkit-scrollbar-thumb {
+  width: 0px;
+}
