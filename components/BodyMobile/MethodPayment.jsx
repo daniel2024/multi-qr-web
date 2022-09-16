@@ -48,7 +48,7 @@ const MethodPayment = () => {
                     }}
                 >
                     <Image src="/modo-icon.svg" alt="Modo Logo" width={36} height={36} />
-                    <NameModo> Modo</NameModo>
+                    <NameModo> MODO</NameModo>
                     <div style={{
                         position: 'absolute',
                         right: '46px',

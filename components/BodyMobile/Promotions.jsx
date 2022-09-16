@@ -30,31 +30,35 @@ const ContainerButtons = styled.div`
   flex-direction: column;
 `;
 
+const ContainerScroll = styled.div`
+display: flex;
+flex-direction: row;
+column-gap: 10px;
+margin-bottom: 32px;
+overflow-x: scroll;
+padding: 0px 10px;
+width: 100%;
+scrollbar-color: grey transparent;
+scrollbar-width: thin;
+height: 116px;
+`;
+
+
 const Promotions = ({ goToPage }) => {
   return (
     <ContainerPromotions>
       <div
-        style={{ display: 'flex', flexDirection: 'row', marginBottom: '32px' }}
+        style={{ display: 'flex', flexDirection: 'row', marginBottom: '16px' }}
       >
         <Label>PROMOCIONES PAGANDO CON</Label>
         <Image alt="logo" src="/MODO-logo.svg" width={48} height={11} />
       </div>
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'row',
-          columnGap: '10px',
-          marginBottom: '32px',
-          overflow: 'hidden',
-        }}
-      >
-        <div>
-          <Image alt="logo" src="/promo1.svg" width={350} height={116} />
-        </div>
-        <div>
-          <Image alt="logo" src="/promo2.svg" width={350} height={116} />
-        </div>
-      </div>
+      <ContainerScroll>
+        
+          <img alt="logo" src="/promo1.svg"  />
+          <img alt="logo" src="/promo2.svg"  />
+        
+      </ContainerScroll>
       <ContainerButtons>
         <Button
           label={'Metodo De Pago'}

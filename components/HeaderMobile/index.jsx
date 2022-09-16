@@ -15,7 +15,7 @@ const ContainerStoreData = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
-margin-bottom: 71px;
+margin-bottom: 20px;
 `;
 
 const NameStore = styled.span`
@@ -75,6 +75,10 @@ const HeaderMobile = ({ onChangeBack, viewBack }) => {
     const hadleWhatsapp = () => {
         window.open("https://api.whatsapp.com/send/?phone=%2B5491132563412&text&type=phone_number&app_absent=0","_blank");    }
 
+    const openSocialLink = (urlLink) => {
+        window.open(urlLink,"_blank");
+    };    
+
     return (
         <ContainerHeaderMobile>
             <Modal open={open} close={()=>setOpen(false)}/>
@@ -88,9 +92,9 @@ const HeaderMobile = ({ onChangeBack, viewBack }) => {
                     <TextLocation>Av. Siempre Viva 742</TextLocation>
                 </ContainerLocation>
                 <ContainerSocialButtons>
-                    <Image style={{ cursor: "pointer" }} src="/icFacebook.svg" alt="Modo Logo" width={20} height={20} />
-                    <Image style={{ cursor: "pointer" }} src="/icInsta.svg" alt="Modo Logo" width={20} height={20} />
-                    <Image style={{ cursor: "pointer" }} src="/icTwiter.svg" alt="Modo Logo" width={20} height={20} />
+                    <Image style={{ cursor: "pointer" }} onClick={()=>openSocialLink("https://es-la.facebook.com/MODO.Arg/")} src="/icFacebook.svg" alt="Modo Logo" width={20} height={20} />
+                    <Image style={{ cursor: "pointer" }} onClick={()=> openSocialLink("https://www.instagram.com/modo.arg/?hl=es")} src="/icInsta.svg" alt="Modo Logo" width={20} height={20} />
+                    <Image style={{ cursor: "pointer" }} onClick={()=> openSocialLink("https://twitter.com/modo_arg?lang=es")} src="/icTwiter.svg" alt="Modo Logo" width={20} height={20} />
                 </ContainerSocialButtons>
                 <div style={{ display: "flex", columnGap: "5px", marginTop: "18px" }}>
                     <IconButton onClick={hadleWhatsapp} srcIcon="/icWhatsapp.svg" label="Contactar" />
