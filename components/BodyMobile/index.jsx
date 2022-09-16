@@ -10,10 +10,10 @@ export const SCREEN_KEY_MOBILE = {
 
 const BodyMobile = ({ actualScreen = SCREEN_KEY_MOBILE.PAYMENT_METHODS, goToPage }) => {
     return (
-        <>
+        <div style={{alignSelf: "flex-start", marginTop:"32px"}}>
             {actualScreen === SCREEN_KEY_MOBILE.PROMOTION && <Promotions  goToPage={goToPage}/>}
             {actualScreen === SCREEN_KEY_MOBILE.PAYMENT_METHODS && <PaymentMethods />}
-        </>
+        </div>
     )
 }
 

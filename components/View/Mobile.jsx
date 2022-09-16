@@ -20,8 +20,9 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-align-self: end;
-padding-bottom: 20px;
+position: absolute;
+bottom: 20px;
+left: calc(50% - 45.5px);
 
 `;
 
@@ -43,7 +44,7 @@ const ContainerScreen = styled.div`
 display: grid;
 grid-template-columns: 100%;
 height: 100%;
-grid-template-rows: 1fr auto 1fr;
+grid-template-rows: 246px auto ;
 
 `;
 
