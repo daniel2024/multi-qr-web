@@ -20,10 +20,9 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+align-self: end;
+padding-bottom: 20px;
 
-position: absolute;
-bottom: 40px;
-left: calc(50% + 91px/2 - 91px);
 `;
 
 const LabelFooter = styled.div`
@@ -40,6 +39,14 @@ line-height: 15px;
 color: #000000;
 `;
 
+const ContainerScreen = styled.div`
+display: grid;
+grid-template-columns: 100%;
+height: 100%;
+grid-template-rows: 1fr auto 1fr;
+
+`;
+
 const Mobile = () => {
 
     const [screen, setScreen] = React.useState(SCREEN_KEY_MOBILE.PROMOTION);
@@ -50,12 +57,14 @@ const Mobile = () => {
 
     return (
         <Container>
-            <HeaderMobile onChangeBack={handleBack} viewBack={SCREEN_KEY_MOBILE.PROMOTION !== screen} />
-            <BodyMobile actualScreen={screen}  goToPage={setScreen} />
-            <FooterContainer>
-                <LabelFooter>powered by</LabelFooter>
-                <Image src={"/MODO-logo.svg"} width={91} height={21} alt={"modo-logo"}/>
-            </FooterContainer>
+            <ContainerScreen >
+                <HeaderMobile onChangeBack={handleBack} viewBack={SCREEN_KEY_MOBILE.PROMOTION !== screen} />
+                <BodyMobile actualScreen={screen} goToPage={setScreen} />
+                <FooterContainer>
+                    <LabelFooter>powered by</LabelFooter>
+                    <Image src={"/MODO-logo.svg"} width={91} height={21} alt={"modo-logo"} />
+                </FooterContainer>
+            </ContainerScreen>
         </Container>
     )
 }
