@@ -8,10 +8,10 @@ export const SCREEN_KEY_MOBILE = {
     PAYMENT_METHODS: "PAYMENT_METHODS",
 }
 
-const BodyMobile = ({ actualScreen = SCREEN_KEY_MOBILE.PAYMENT_METHODS }) => {
+const BodyMobile = ({ actualScreen = SCREEN_KEY_MOBILE.PAYMENT_METHODS, goToPage }) => {
     return (
         <>
-            {actualScreen === SCREEN_KEY_MOBILE.PROMOTION && <Promotions />}
+            {actualScreen === SCREEN_KEY_MOBILE.PROMOTION && <Promotions  goToPage={goToPage}/>}
             {actualScreen === SCREEN_KEY_MOBILE.PAYMENT_METHODS && <PaymentMethods />}
         </>
     )

@@ -3,6 +3,7 @@ import HeaderMobile from '../HeaderMobile';
 import BodyMobile from '../BodyMobile'
 import styled from 'styled-components';
 import Image from 'next/image';
+import { SCREEN_KEY_MOBILE } from '../BodyMobile'
 const Container = styled.div`
 position: fixed;
 height: 100vh;
@@ -38,18 +39,22 @@ color: #000000;
 
 const Mobile = () => {
 
-    const [screen, setScreen] = React.useState()
+    const [screen, setScreen] = React.useState(SCREEN_KEY_MOBILE.PROMOTION);
 
-  return (
-    <Container>
-        <HeaderMobile/>
-        <BodyMobile/>
-        <FooterContainer>
-            <LabelFooter>powered by</LabelFooter>
-            <Image src={"/MODO-logo.svg"} width={91} height={21}/>
-        </FooterContainer>
-    </Container>
-  )
+    const handleBack = () => {
+        setScreen(SCREEN_KEY_MOBILE.PROMOTION);
+    };
+
+    return (
+        <Container>
+            <HeaderMobile onChangeBack={handleBack} viewBack={SCREEN_KEY_MOBILE.PROMOTION !== screen} />
+            <BodyMobile actualScreen={screen}  goToPage={setScreen} />
+            <FooterContainer>
+                <LabelFooter>powered by</LabelFooter>
+                <Image src={"/MODO-logo.svg"} width={91} height={21} alt={"modo-logo"}/>
+            </FooterContainer>
+        </Container>
+    )
 }
 
 export default Mobile

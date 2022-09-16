@@ -13,9 +13,9 @@ const ContainerButtons = styled.div`
 const ButtonPayment = styled.button`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  position: relative;
   align-items: center;
-  padding: 0px;
+  padding: 0px 10px ;
   background: #f8f8f8;
   border-radius: 20px;
   border: hidden;
@@ -28,72 +28,88 @@ const NameModo = styled.span`
   font-weight: 500;
   font-size: 16px;
   line-height: 22px;
-  text-align: center;
+  text-align: left;
   color: #121212;
+  margin-left: 10px;
 `;
 
 const MethodPayment = () => {
-  return (
-    <ContainerButtons>
-      <ButtonPayment>
-        <div
-          style={{
-            marginRight: '18px',
-            display: 'flex',
-            flexDirection: 'row',
-            gap: '45px',
-            alignContent: 'center',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
-        >
-          <Image src="/modo-icon.svg" alt="Modo Logo" width={36} height={36} />
-          <NameModo> Modo</NameModo>
-          <Image src="/promo-tooltip.svg" alt="next" width={71} height={22} />
-          <Image src="/next.svg" alt="next" width={36} height={36} />
-        </div>
-      </ButtonPayment>
-      <ButtonPayment>
-        <div
-          style={{
-            marginRight: '18px',
-            display: 'flex',
-            flexDirection: 'row',
-            gap: '85px',
-            alignContent: 'center',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
-        >
-          <Image src="/mp-icon.svg" alt="MP Logo" width={36} height={36} />
-          <NameModo> Mercado Pago </NameModo>
-          <Image src="/next.svg" alt="next" width={36} height={36} />
-        </div>
-      </ButtonPayment>
-      <ButtonPayment>
-        <div
-          style={{
-            marginRight: '18px',
-            display: 'flex',
-            flexDirection: 'row',
-            gap: '85px',
-            alignContent: 'center',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
-        >
-          <Image
-            src="/cuentadni-icon.svg"
-            alt="MP Logo"
-            width={36}
-            height={36}
-          />
-          <NameModo> Cuenta DNI </NameModo>
-          <Image src="/next.svg" alt="next" width={36} height={36} />
-        </div>
-      </ButtonPayment>
-    </ContainerButtons>
-  );
+    return (
+        <ContainerButtons>
+            <ButtonPayment>
+                <div
+                    style={{
+
+                        display: 'flex',
+                        flexDirection: 'row',
+                        alignItems: 'center',
+                        width: '100%',
+                        position: 'relative',
+                    }}
+                >
+                    <Image src="/modo-icon.svg" alt="Modo Logo" width={36} height={36} />
+                    <NameModo> Modo</NameModo>
+                    <div style={{
+                        position: 'absolute',
+                        right: '46px',
+                    }}>
+                    <Image src="/promo-tooltip.svg" alt="next" width={71} height={22} />
+                    </div>
+                    <div style={{
+                        position: 'absolute',
+                        right: '0px',
+                    }} ><Image src="/next.svg" alt="next" width={36} height={36} />
+                    </div>
+                </div>
+            </ButtonPayment>
+            <ButtonPayment>
+                <div
+                    style={{
+                        display: 'flex',
+                        flexDirection: 'row',
+                        alignItems: 'center',
+                        width: '100%',
+                        position: 'relative',
+
+                    }}
+                >
+                    <Image src="/mp-icon.svg" alt="MP Logo" width={36} height={36} />
+                    <NameModo> Mercado Pago </NameModo>
+                    <div style={{
+                        position: 'absolute',
+                        right: '0px',
+                    }} >
+                        <Image src="/next.svg" alt="next" width={36} height={36} />
+                    </div>
+                </div>
+            </ButtonPayment>
+            <ButtonPayment>
+                <div
+                    style={{
+                        display: 'flex',
+                        flexDirection: 'row',
+                        alignItems: 'center',
+                        width: '100%',
+                        position: 'relative',
+                    }}
+                >
+                    <Image
+                        src="/cuentadni-icon.svg"
+                        alt="MP Logo"
+                        width={36}
+                        height={36}
+                    />
+                    <NameModo> Cuenta DNI </NameModo>
+                    <div style={{
+                        position: 'absolute',
+                        right: '0px',
+                    }} >
+                        <Image src="/next.svg" alt="next" width={36} height={36} />
+                    </div>
+                </div>
+            </ButtonPayment>
+        </ContainerButtons>
+    );
 };
 
 export default MethodPayment;
