@@ -10,6 +10,9 @@ height: 100vh;
 width: 100vw;
 display: block;
 margin: 0px auto;
+@media screen and (min-width: 768px) {
+    display: none;
+}
 
 `;
 const FooterContainer = styled.div`
